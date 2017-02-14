@@ -22,6 +22,8 @@
 # Enable support for chinook sensorhub
 TARGET_USES_CHINOOK_SENSORHUB := false
 
+GAPPS_VARIANT := pico
+
 PRODUCT_COPY_FILES := \
     device/huawei/angler/init.angler.rc:root/init.angler.rc \
     device/huawei/angler/init.angler.usb.rc:root/init.angler.usb.rc \
@@ -483,3 +485,4 @@ endif
 # b/29995499
 $(call add-product-sanitizer-module-config,cameraserver,never)
 $(call add-product-sanitizer-module-config,mm-qcamera-daemon,never)
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
